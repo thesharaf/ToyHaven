@@ -1,0 +1,1679 @@
+/* 1. Shared colours, spacing and readable base styles. */
+/* These are the shared website colours and design values. */
+:root {
+    /* This stores a reusable design value. */
+    --blue: #132f59;
+    /* This stores a reusable design value. */
+    --blue-light: #edf3fc;
+    /* This stores a reusable design value. */
+    --orange: #ee651e;
+    /* This stores a reusable design value. */
+    --ink: #172d49;
+    /* This stores a reusable design value. */
+    --muted: #556478;
+    /* This stores a reusable design value. */
+    --line: #dce3ec;
+    /* This stores a reusable design value. */
+    --shadow: 0 14px 40px #162f5910;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    /* This makes anchor link scrolling smooth. */
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+body {
+    /* This sets space outside the element. */
+    margin: 0;
+    /* This sets the background colour or gradient. */
+    background: #f6f8fb;
+    /* This sets the text colour. */
+    color: var(--ink);
+    /* This sets the font and line spacing. */
+    font: 16px/1.6 Arial, Helvetica, sans-serif;
+}
+body::before {
+    content: "";
+    /* This keeps the element in place while scrolling. */
+    position: fixed;
+    inset: 0;
+    /* This controls which positioned element appears on top. */
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 95% 10%, #e7eefb, transparent 42%),
+        radial-gradient(ellipse at 5% 65%, #fff0e4, transparent 40%);
+}
+h1,
+h2,
+h3,
+p {
+    /* This sets space outside the top edge. */
+    margin-top: 0;
+}
+h1,
+h2,
+h3 {
+    /* This sets the text colour. */
+    color: var(--blue);
+    /* This sets the space between lines of text. */
+    line-height: 1.15;
+}
+h1 {
+    /* This sets the text size. */
+    font-size: 2.45rem;
+    /* This changes the space between letters. */
+    letter-spacing: -1.6px;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 20px;
+}
+h2 {
+    /* This sets the text size. */
+    font-size: 1.75rem;
+    /* This changes the space between letters. */
+    letter-spacing: -0.5px;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 20px;
+}
+h3 {
+    /* This sets the text size. */
+    font-size: 1.4rem;
+}
+p {
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 16px;
+}
+a {
+    /* This sets the text colour. */
+    color: var(--blue);
+    /* This removes the default underline. */
+    text-decoration: none;
+}
+a:hover {
+    /* This sets the text colour. */
+    color: #a44310;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    /* This displays the element as a block. */
+    display: block;
+}
+button,
+input,
+select,
+textarea {
+    /* This sets the font and line spacing. */
+    font: inherit;
+}
+button,
+/* These styles control button. */
+.button {
+    /* This sets the border appearance. */
+    border: 1px solid transparent;
+    /* This rounds the corners. */
+    border-radius: 10px;
+    /* This sets space inside the element. */
+    padding: 13px 20px;
+    /* This sets the background colour or gradient. */
+    background: linear-gradient(135deg, #ff8c38, var(--orange));
+    /* This sets the text colour. */
+    color: #172b48;
+    /* This sets how bold the text is. */
+    font-weight: 700;
+    /* This sets the text size. */
+    font-size: 0.9375rem;
+    /* This shows a hand pointer. */
+    cursor: pointer;
+    /* This creates a flexible row that fits its content. */
+    display: inline-flex;
+    /* This centres the items along the main axis. */
+    justify-content: center;
+    /* This aligns items across the row or grid. */
+    align-items: center;
+    /* This sets the space between items. */
+    gap: 12px;
+    /* This adds a shadow. */
+    box-shadow: 0 5px 0 #a44416, 0 9px 20px #dc682022;
+    /* This makes style changes smooth. */
+    transition: transform .2s, box-shadow .2s, background .2s;
+}
+button:hover,
+/* These styles control button:hover. */
+.button:hover {
+    /* This moves, rotates or scales the element. */
+    transform: translateY(-3px);
+    /* This adds a shadow. */
+    box-shadow: 0 7px 0 #a44416, 0 12px 22px #dc68202b;
+    /* This sets the text colour. */
+    color: #172b48;
+}
+button:active,
+/* These styles control button:active. */
+.button:active {
+    /* This moves, rotates or scales the element. */
+    transform: translateY(2px);
+    /* This adds a shadow. */
+    box-shadow: 0 2px 0 #a44416;
+}
+button:disabled {
+    /* This sets the transparency. */
+    opacity: .55;
+    /* This shows that the control is unavailable. */
+    cursor: not-allowed;
+    /* This removes movement or scaling. */
+    transform: none;
+}
+:focus-visible {
+    outline: 3px solid #1763b0;
+    outline-offset: 4px;
+}
+[hidden] {
+    display: none !important;
+}
+/* These styles control container. */
+.container {
+    width: min(1180px, 90%);
+    /* This centres the element horizontally. */
+    margin: auto;
+}
+main.container {
+    min-height: 55vh;
+    /* This sets space inside the bottom edge. */
+    padding-bottom: 80px;
+}
+/* These styles control muted. */
+.muted {
+    /* This sets the text colour. */
+    color: var(--muted);
+    /* This sets the text size. */
+    font-size: 0.9375rem;
+}
+.eyebrow,
+/* These styles control category. */
+.category {
+    /* This sets the text colour. */
+    color: #8b3c0f;
+    /* This sets the text size. */
+    font-size: 0.78rem;
+    /* This sets how bold the text is. */
+    font-weight: 700;
+    /* This changes the space between letters. */
+    letter-spacing: 1.6px;
+    /* This displays the text in uppercase. */
+    text-transform: uppercase;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 14px;
+}
+/* These styles control category. */
+.category {
+    /* This sets the text size. */
+    font-size: 0.75rem;
+    /* This changes the space between letters. */
+    letter-spacing: 1px;
+}
+/* These styles control panel. */
+.panel {
+    /* This sets space inside the element. */
+    padding: 26px;
+    /* This sets the border appearance. */
+    border: 1px solid white;
+    /* This sets the background colour or gradient. */
+    background: #ffffffd9;
+    /* This rounds the corners. */
+    border-radius: 20px;
+    /* This adds a shadow. */
+    box-shadow: var(--shadow), inset 0 1px white;
+    /* This blurs the background behind the element. */
+    backdrop-filter: blur(14px);
+}
+/* These styles control secondary. */
+.secondary {
+    /* This sets the text colour. */
+    color: var(--blue);
+    /* This sets the background colour or gradient. */
+    background: #fff;
+    /* This sets the border appearance. */
+    border-color: #c4cfdd;
+    /* This adds a shadow. */
+    box-shadow: 0 3px 0 #e1e7ef;
+}
+/* These styles control secondary:hover. */
+.secondary:hover {
+    /* This sets the text colour. */
+    color: var(--blue);
+    /* This adds a shadow. */
+    box-shadow: 0 5px 0 #d4deeb;
+}
+.text-link,
+/* These styles control text button. */
+.text-button {
+    /* This sets how bold the text is. */
+    font-weight: 700;
+    /* This adds an underline. */
+    text-decoration: underline;
+    /* This sets the gap between text and its underline. */
+    text-underline-offset: 5px;
+}
+/* These styles control text button. */
+.text-button {
+    /* This sets the border appearance. */
+    border: 0;
+    /* This sets space inside the element. */
+    padding: 6px 0;
+    /* This sets the background colour or gradient. */
+    background: none;
+    /* This sets the text colour. */
+    color: var(--blue);
+    /* This adds a shadow. */
+    box-shadow: none;
+}
+/* These styles control text button:hover. */
+.text-button:hover {
+    /* This sets the text colour. */
+    color: #8b3c0f;
+    /* This adds a shadow. */
+    box-shadow: none;
+    /* This removes movement or scaling. */
+    transform: none;
+}
+/* These styles control full width. */
+.full-width {
+    width: 100%;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 18px;
+}
+.sr-only,
+/* These styles control skip link. */
+.skip-link {
+    /* This positions the element inside its positioned parent. */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    /* This controls content outside the box. */
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+/* These styles control skip link:focus. */
+.skip-link:focus {
+    clip-path: none;
+    width: auto;
+    height: auto;
+    top: 12px;
+    left: 12px;
+    /* This sets space inside the element. */
+    padding: 10px;
+    /* This sets the background colour or gradient. */
+    background: white;
+    /* This controls which positioned element appears on top. */
+    z-index: 100;
+}
+/* 2. Glass navigation and a CSS animated mobile menu. */
+/* These styles control site header. */
+.site-header {
+    /* This keeps the element visible after its scroll position is reached. */
+    position: sticky;
+    top: 0;
+    /* This controls which positioned element appears on top. */
+    z-index: 20;
+    /* This sets the background colour or gradient. */
+    background: #ffffffdf;
+    /* This blurs the background behind the element. */
+    backdrop-filter: blur(18px);
+    /* This sets the border appearance. */
+    border-bottom: 1px solid #fff;
+    /* This adds a shadow. */
+    box-shadow: 0 2px 25px #142f5906;
+}
+/* These styles control nav wrap. */
+.nav-wrap {
+    width: min(1240px, 92%);
+    /* This centres the element horizontally. */
+    margin: auto;
+    min-height: 84px;
+    /* This arranges items with Flexbox. */
+    display: flex;
+    /* This aligns items across the row or grid. */
+    align-items: center;
+    /* This puts space between the items. */
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* These styles control brand. */
+.brand {
+    /* This creates a flexible row that fits its content. */
+    display: inline-flex;
+    /* This aligns items across the row or grid. */
+    align-items: center;
+    /* This sets the text size. */
+    font-size: 1.45rem;
+    /* This sets how bold the text is. */
+    font-weight: 800;
+    /* This changes the space between letters. */
+    letter-spacing: -0.8px;
+    /* This sets the text colour. */
+    color: var(--blue);
+}
+/* These styles control brand > span:not(brand mark). */
+.brand > span:not(.brand-mark) {
+    /* This sets the text colour. */
+    color: #a94614;
+}
+/* These styles control brand mark. */
+.brand-mark {
+    /* This sets the background colour or gradient. */
+    background: var(--blue);
+    /* This sets the text colour. */
+    color: white;
+    /* This rounds the corners. */
+    border-radius: 10px;
+    /* This sets the text size. */
+    font-size: 0.875rem;
+    /* This changes the space between letters. */
+    letter-spacing: -1px;
+    width: 40px;
+    height: 40px;
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This centres grid items in both directions. */
+    place-items: center;
+    /* This sets space outside the right edge. */
+    margin-right: 10px;
+    /* This adds a shadow. */
+    box-shadow: 0 4px 0 #0a1b33;
+}
+/* These styles control navigation. */
+#navigation {
+    /* This hides the element. */
+    display: none;
+    width: 100%;
+    /* This sets space inside the element. */
+    padding: 15px 0 22px;
+}
+/* These styles control navigationopen. */
+#navigation.open {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    flex-direction: column;
+    /* This sets the space between items. */
+    gap: 4px;
+    /* This runs the named animation. */
+    animation: appear .25s;
+}
+/* These styles control navigation a. */
+#navigation a {
+    /* This sets space inside the element. */
+    padding: 10px 13px;
+    /* This sets the text size. */
+    font-size: 0.875rem;
+    /* This sets how bold the text is. */
+    font-weight: 700;
+    /* This rounds the corners. */
+    border-radius: 8px;
+}
+#navigation a:hover,
+/* These styles control navigation a[aria current="page"]. */
+#navigation a[aria-current="page"] {
+    /* This sets the background colour or gradient. */
+    background: var(--blue-light);
+    /* This sets the text colour. */
+    color: var(--blue);
+}
+/* These styles control cart count. */
+#cart-count {
+    /* This creates a small inline grid. */
+    display: inline-grid;
+    /* This centres grid items in both directions. */
+    place-items: center;
+    min-width: 20px;
+    height: 20px;
+    /* This sets space outside the left edge. */
+    margin-left: 4px;
+    /* This sets the text size. */
+    font-size: 0.75rem;
+    /* This sets the text colour. */
+    color: white;
+    /* This sets the background colour or gradient. */
+    background: var(--blue);
+    /* This rounds the corners. */
+    border-radius: 50%;
+}
+/* These styles control menu button. */
+.menu-button {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    flex-direction: column;
+    /* This sets space inside the element. */
+    padding: 12px;
+    /* This sets the space between items. */
+    gap: 5px;
+    /* This sets the background colour or gradient. */
+    background: var(--blue);
+    /* This adds a shadow. */
+    box-shadow: none;
+}
+/* These styles control menu button span. */
+.menu-button span {
+    width: 22px;
+    height: 2px;
+    /* This sets the background colour or gradient. */
+    background: white;
+    /* This makes style changes smooth. */
+    transition: transform .25s, opacity .25s;
+}
+/* These styles control menu button[aria expanded="true"] span:first child. */
+.menu-button[aria-expanded="true"] span:first-child {
+    /* This moves, rotates or scales the element. */
+    transform: translateY(7px) rotate(45deg);
+}
+/* These styles control menu button[aria expanded="true"] span:nth child(2). */
+.menu-button[aria-expanded="true"] span:nth-child(2) {
+    /* This makes the element invisible. */
+    opacity: 0;
+}
+/* These styles control menu button[aria expanded="true"] span:last child. */
+.menu-button[aria-expanded="true"] span:last-child {
+    /* This moves, rotates or scales the element. */
+    transform: translateY(-7px) rotate(-45deg);
+}
+/* 3. Home page editorial layout and product imagery. */
+/* These styles control hero. */
+.hero {
+    /* This sets space outside the top edge. */
+    margin-top: 35px;
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This sets the border appearance. */
+    border: 1px solid white;
+    /* This rounds the corners. */
+    border-radius: 28px;
+    /* This sets the background colour or gradient. */
+    background: linear-gradient(130deg, #ffffffda, #edf2fbcd);
+    /* This adds a shadow. */
+    box-shadow: var(--shadow);
+    /* This controls content outside the box. */
+    overflow: hidden;
+}
+/* These styles control hero copy. */
+.hero-copy {
+    /* This sets space inside the element. */
+    padding: 35px 26px;
+}
+/* These styles control hero copy h1. */
+.hero-copy h1 {
+    /* This controls line breaks and spaces in the text. */
+    white-space: pre-line;
+}
+/* These styles control hero copy > p:not(eyebrow). */
+.hero-copy > p:not(.eyebrow) {
+    /* This sets the text colour. */
+    color: var(--muted);
+    max-width: 360px;
+}
+/* These styles control actions. */
+.actions {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    /* This sets the space between items. */
+    gap: 24px;
+    flex-wrap: wrap;
+    /* This aligns items across the row or grid. */
+    align-items: center;
+    /* This sets space outside the top edge. */
+    margin-top: 28px;
+}
+/* These styles control banner controls. */
+.banner-controls {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    /* This aligns items across the row or grid. */
+    align-items: center;
+    /* This sets the space between items. */
+    gap: 18px;
+    /* This sets space outside the top edge. */
+    margin-top: 35px;
+    /* This sets the text size. */
+    font-size: 0.8rem;
+    /* This sets how bold the text is. */
+    font-weight: bold;
+}
+/* These styles control hero art. */
+.hero-art {
+    /* This provides a position reference for its children. */
+    position: relative;
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This centres grid items in both directions. */
+    place-items: center;
+    /* This sets space inside the element. */
+    padding: 40px 32px;
+    min-height: 340px;
+    /* This sets the background colour or gradient. */
+    background: radial-gradient(circle, #fff 43%, #e5edf9 75%);
+}
+/* These styles control hero art img. */
+.hero-art img {
+    width: 100%;
+    height: 340px;
+    /* This fits the image inside its space. */
+    object-fit: contain;
+    /* This blends the image with its background. */
+    mix-blend-mode: multiply;
+    /* This adds a visual effect to the element. */
+    filter: drop-shadow(0 18px 14px #16345514);
+}
+/* These styles control floating label. */
+.floating-label {
+    /* This positions the element inside its positioned parent. */
+    position: absolute;
+    top: 23px;
+    left: 25px;
+    /* This controls which positioned element appears on top. */
+    z-index: 1;
+    /* This sets space inside the element. */
+    padding: 8px 16px;
+    /* This sets the background colour or gradient. */
+    background: #ffffffd9;
+    /* This sets the border appearance. */
+    border: 1px solid white;
+    /* This rounds the corners. */
+    border-radius: 30px;
+    /* This sets the text size. */
+    font-size: 0.8rem;
+    /* This adds a shadow. */
+    box-shadow: var(--shadow);
+}
+/* These styles control image caption. */
+.image-caption {
+    /* This positions the element inside its positioned parent. */
+    position: absolute;
+    bottom: 18px;
+    right: 26px;
+    /* This sets the text size. */
+    font-size: 0.8rem;
+    /* This sets how bold the text is. */
+    font-weight: 700;
+    /* This sets the text colour. */
+    color: #465b78;
+}
+/* Equal-sized category boxes: two per row on phones. */
+/* These styles control intro strip. */
+.intro-strip {
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This sets the number and widths of grid columns. */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* This sets the space between items. */
+    gap: 12px;
+    /* This sets space outside the top edge. */
+    margin-top: 20px;
+    /* This sets space inside the element. */
+    padding: 0;
+    /* This sets the border appearance. */
+    border: 0;
+}
+/* These styles control intro strip a. */
+.intro-strip a {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    /* This aligns items across the row or grid. */
+    align-items: center;
+    /* This centres the items along the main axis. */
+    justify-content: center;
+    /* This sets the space between items. */
+    gap: 10px;
+    min-height: 64px;
+    /* This sets space inside the element. */
+    padding: 14px 10px;
+    /* This sets the background colour or gradient. */
+    background: white;
+    /* This sets the border appearance. */
+    border: 1px solid var(--line);
+    /* This rounds the corners. */
+    border-radius: 10px;
+    /* This sets the text colour. */
+    color: var(--blue);
+    /* This sets the text size. */
+    font-size: 0.9375rem;
+    /* This sets how bold the text is. */
+    font-weight: 700;
+    /* This aligns the text center. */
+    text-align: center;
+}
+.intro-strip a:hover,
+/* These styles control intro strip a:focus visible. */
+.intro-strip a:focus-visible {
+    /* This sets the background colour or gradient. */
+    background: var(--blue-light);
+    /* This sets the border appearance. */
+    border-color: var(--blue);
+}
+/* These styles control intro strip span. */
+.intro-strip span {
+    /* This sets the text colour. */
+    color: #96613e;
+    /* This sets the text size. */
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+/* These styles control section. */
+.section {
+    /* This sets space inside the top edge. */
+    padding-top: 58px;
+}
+/* These styles control section heading. */
+.section-heading {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    /* This sets the space between items. */
+    gap: 20px;
+    flex-wrap: wrap;
+    /* This aligns items across the row or grid. */
+    align-items: end;
+    /* This puts space between the items. */
+    justify-content: space-between;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 24px;
+}
+/* These styles control section heading h2. */
+.section-heading h2 {
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 0;
+}
+/* These styles control section heading > p. */
+.section-heading > p {
+    /* This sets the text colour. */
+    color: var(--muted);
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 0;
+}
+/* These styles control daily product. */
+.daily-product {
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This rounds the corners. */
+    border-radius: 22px;
+    /* This sets the background colour or gradient. */
+    background: linear-gradient(120deg, #edf3fe, #ffffff);
+    /* This sets the border appearance. */
+    border: 1px solid white;
+    /* This adds a shadow. */
+    box-shadow: var(--shadow);
+    /* This controls content outside the box. */
+    overflow: hidden;
+}
+/* These styles control daily product img. */
+.daily-product img {
+    width: 100%;
+    height: 240px;
+    /* This fits the image inside its space. */
+    object-fit: contain;
+    /* This sets space inside the element. */
+    padding: 20px;
+    /* This blends the image with its background. */
+    mix-blend-mode: multiply;
+}
+/* These styles control daily product > div. */
+.daily-product > div {
+    /* This sets space inside the element. */
+    padding: 28px;
+}
+/* These styles control daily product h3. */
+.daily-product h3 {
+    /* This sets the text size. */
+    font-size: 1.9rem;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 12px;
+}
+/* These styles control daily product p:not(category):not(price). */
+.daily-product p:not(.category):not(.price) {
+    /* This sets the text colour. */
+    color: var(--muted);
+    max-width: 430px;
+}
+/* 4. Shared product cards with fixed, centred image areas. */
+/* These styles control product grid. */
+.product-grid {
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This sets the number and widths of grid columns. */
+    grid-template-columns: 1fr;
+    /* This sets the space between items. */
+    gap: 26px;
+}
+/* These styles control product card. */
+.product-card {
+    /* This sets the background colour or gradient. */
+    background: #ffffffed;
+    /* This sets the border appearance. */
+    border: 1px solid white;
+    /* This rounds the corners. */
+    border-radius: 20px;
+    /* This controls content outside the box. */
+    overflow: hidden;
+    /* This adds a shadow. */
+    box-shadow: var(--shadow);
+    /* This makes style changes smooth. */
+    transition: transform .25s, box-shadow .25s;
+}
+/* These styles control product card:hover. */
+.product-card:hover {
+    /* This moves, rotates or scales the element. */
+    transform: translateY(-6px);
+    /* This adds a shadow. */
+    box-shadow: 0 22px 40px #12335b1c;
+}
+/* These styles control product image. */
+.product-image {
+    /* This sets the background colour or gradient. */
+    background: linear-gradient(135deg, #eff3fa, #f9fafc);
+    /* This sets space inside the element. */
+    padding: 20px;
+    height: 250px;
+}
+/* These styles control product image img. */
+.product-image img {
+    width: 100%;
+    height: 100%;
+    /* This fits the image inside its space. */
+    object-fit: contain;
+    /* This blends the image with its background. */
+    mix-blend-mode: multiply;
+    /* This makes style changes smooth. */
+    transition: transform .45s;
+}
+/* These styles control product card:hover img. */
+.product-card:hover img {
+    /* This moves, rotates or scales the element. */
+    transform: scale(1.04);
+}
+/* These styles control product info. */
+.product-info {
+    /* This sets space inside the element. */
+    padding: 24px;
+}
+/* These styles control product info h2. */
+.product-info h2 {
+    /* This sets the text size. */
+    font-size: 1.2rem;
+    min-height: 2.8rem;
+    /* This sets the space between lines of text. */
+    line-height: 1.35;
+    /* This changes the space between letters. */
+    letter-spacing: -0.3px;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 10px;
+}
+/* These styles control price. */
+.price {
+    /* This sets how bold the text is. */
+    font-weight: 800;
+    /* This sets the text colour. */
+    color: var(--blue);
+    /* This sets the text size. */
+    font-size: 1.15rem;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 18px;
+}
+/* These styles control card actions. */
+.card-actions {
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This sets the number and widths of grid columns. */
+    grid-template-columns: 1fr 1fr;
+    /* This sets the space between items. */
+    gap: 10px;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 16px;
+}
+/* These styles control card actions button. */
+.card-actions button {
+    /* This sets the text size. */
+    font-size: 0.875rem;
+    /* This sets space inside the element. */
+    padding: 11px 8px;
+}
+/* These styles control product info select. */
+.product-info select {
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 20px;
+}
+/* These styles control page heading. */
+.page-heading {
+    /* This sets space inside the element. */
+    padding: 48px 0 25px;
+}
+/* These styles control page heading p:last child. */
+.page-heading p:last-child {
+    /* This sets the text colour. */
+    color: var(--muted);
+}
+/* These styles control filter panel. */
+.filter-panel {
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This sets the space between items. */
+    gap: 20px;
+    /* This sets space inside the element. */
+    padding: 22px;
+}
+.filter-panel input,
+/* These styles control filter panel select. */
+.filter-panel select {
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 0;
+}
+/* These styles control results label. */
+.results-label {
+    /* This sets the text colour. */
+    color: var(--muted);
+    /* This sets the text size. */
+    font-size: 0.875rem;
+    /* This sets space outside the element. */
+    margin: 24px 0;
+}
+/* These styles control empty. */
+.empty {
+    grid-column: 1 / -1;
+    width: 100%;
+    /* This aligns the text center. */
+    text-align: center;
+    /* This sets space inside the element. */
+    padding: 50px 25px;
+}
+/* These styles control empty h2. */
+.empty h2 {
+    /* This sets the text size. */
+    font-size: 1.6rem;
+}
+/* 5. Cart, forms and checkout. */
+/* These styles control two column. */
+.two-column {
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This sets the space between items. */
+    gap: 30px;
+    /* This aligns items across the row or grid. */
+    align-items: start;
+}
+/* These styles control cart row. */
+.cart-row {
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This sets the number and widths of grid columns. */
+    grid-template-columns: 85px 1fr;
+    /* This sets the space between items. */
+    gap: 18px;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 20px;
+    /* This sets space inside the element. */
+    padding: 20px;
+}
+/* These styles control cart row img. */
+.cart-row img {
+    width: 85px;
+    height: 110px;
+    /* This fits the image inside its space. */
+    object-fit: contain;
+}
+/* These styles control cart row h2. */
+.cart-row h2 {
+    /* This sets the text size. */
+    font-size: 1.15rem;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 8px;
+    /* This sets the space between lines of text. */
+    line-height: 1.35;
+}
+/* These styles control cart row category. */
+.cart-row .category {
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 8px;
+}
+/* These styles control cart row p:not(price):not(category). */
+.cart-row p:not(.price):not(.category) {
+    /* This sets the text size. */
+    font-size: 0.875rem;
+    /* This sets the text colour. */
+    color: var(--muted);
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 10px;
+}
+/* These styles control quantity. */
+.quantity {
+    /* This creates a flexible row that fits its content. */
+    display: inline-flex;
+    /* This aligns items across the row or grid. */
+    align-items: center;
+    /* This sets the background colour or gradient. */
+    background: #f0f4fa;
+    /* This rounds the corners. */
+    border-radius: 9px;
+    /* This sets the border appearance. */
+    border: 1px solid var(--line);
+}
+/* These styles control quantity button. */
+.quantity button {
+    /* This sets the text colour. */
+    color: var(--blue);
+    /* This sets the background colour or gradient. */
+    background: transparent;
+    /* This adds a shadow. */
+    box-shadow: none;
+    /* This sets space inside the element. */
+    padding: 5px 12px;
+    /* This sets the text size. */
+    font-size: 1.2rem;
+}
+/* These styles control quantity span. */
+.quantity span {
+    min-width: 28px;
+    /* This aligns the text center. */
+    text-align: center;
+}
+/* These styles control row end. */
+.row-end {
+    grid-column: 2;
+}
+/* These styles control row end price. */
+.row-end .price {
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 0;
+}
+/* These styles control summary h2. */
+.summary h2 {
+    /* This sets the text size. */
+    font-size: 1.4rem;
+}
+/* These styles control total line. */
+.total-line {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    /* This aligns items across the row or grid. */
+    align-items: center;
+    /* This puts space between the items. */
+    justify-content: space-between;
+    /* This sets the space between items. */
+    gap: 18px;
+    /* This sets space inside the element. */
+    padding: 22px 0;
+    /* This sets the border appearance. */
+    border-top: 1px solid var(--line);
+    /* This sets the border appearance. */
+    border-bottom: 1px solid var(--line);
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 20px;
+}
+/* These styles control total line strong. */
+.total-line strong {
+    /* This sets the text size. */
+    font-size: 1.15rem;
+    /* This controls line breaks and spaces in the text. */
+    white-space: nowrap;
+}
+label {
+    /* This displays the element as a block. */
+    display: block;
+    /* This sets how bold the text is. */
+    font-weight: 700;
+    /* This sets the text size. */
+    font-size: 0.875rem;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 8px;
+}
+input,
+select,
+textarea {
+    width: 100%;
+    /* This sets space inside the element. */
+    padding: 13px 14px;
+    /* This sets the text colour. */
+    color: var(--ink);
+    /* This sets the border appearance. */
+    border: 1px solid #a5b4c7;
+    /* This rounds the corners. */
+    border-radius: 9px;
+    /* This sets the background colour or gradient. */
+    background: #fafcff;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 20px;
+    /* This adds a shadow. */
+    box-shadow: inset 0 2px 4px #142f5905;
+}
+input:focus,
+select:focus,
+textarea:focus {
+    /* This sets the background colour or gradient. */
+    background: white;
+    /* This sets the border appearance. */
+    border-color: #1763b0;
+}
+textarea {
+    /* This controls how the text box can be resized. */
+    resize: vertical;
+}
+/* These styles control form message. */
+.form-message {
+    /* This sets the text size. */
+    font-size: 0.875rem;
+    /* This sets the text colour. */
+    color: #9b241d;
+}
+/* These styles control form message:empty. */
+.form-message:empty {
+    /* This hides the element. */
+    display: none;
+}
+/* These styles control form messagegood. */
+.form-message.good {
+    /* This sets the text colour. */
+    color: #155b3c;
+    /* This runs the named animation. */
+    animation: appear .3s;
+}
+/* These styles control order list. */
+.order-list {
+    /* This sets space inside the element. */
+    padding: 0;
+    /* This sets space outside the element. */
+    margin: 0 0 25px;
+    list-style: none;
+}
+/* These styles control order list li. */
+.order-list li {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    /* This sets the space between items. */
+    gap: 18px;
+    /* This puts space between the items. */
+    justify-content: space-between;
+    /* This sets space inside the element. */
+    padding: 15px 0;
+    /* This sets the border appearance. */
+    border-bottom: 1px solid var(--line);
+    /* This sets the text size. */
+    font-size: 0.9rem;
+}
+/* These styles control order list strong. */
+.order-list strong {
+    /* This controls line breaks and spaces in the text. */
+    white-space: nowrap;
+}
+/* These styles control success. */
+.success {
+    max-width: 720px;
+    /* This sets space outside the element. */
+    margin: 20px auto;
+    /* This aligns the text center. */
+    text-align: center;
+    /* This sets space inside the element. */
+    padding: 50px 30px;
+    /* This runs the named animation. */
+    animation: appear .6s;
+}
+/* These styles control success check. */
+.success-check {
+    /* This creates a small inline grid. */
+    display: inline-grid;
+    /* This centres grid items in both directions. */
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    /* This rounds the corners. */
+    border-radius: 50%;
+    /* This sets the background colour or gradient. */
+    background: #e5f4ec;
+    /* This sets the text colour. */
+    color: #155b3c;
+    /* This sets the text size. */
+    font-size: 2.5rem;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 25px;
+    /* This runs the named animation. */
+    animation: success-pop .6s;
+}
+/* 6. Support accordion, footer and messages. */
+/* These styles control faq. */
+.faq {
+    /* This sets space inside the element. */
+    padding: 12px 0;
+}
+/* These styles control faq h2. */
+.faq h2 {
+    /* This sets the text size. */
+    font-size: 1.65rem;
+}
+/* These styles control faq item. */
+.faq-item {
+    /* This sets the border appearance. */
+    border-bottom: 1px solid #cbd5e2;
+}
+/* These styles control faq item h3. */
+.faq-item h3 {
+    /* This sets space outside the element. */
+    margin: 0;
+}
+/* These styles control faq button. */
+.faq-button {
+    width: 100%;
+    /* This puts space between the items. */
+    justify-content: space-between;
+    /* This aligns the text left. */
+    text-align: left;
+    /* This sets the background colour or gradient. */
+    background: transparent;
+    /* This sets the text colour. */
+    color: var(--blue);
+    /* This sets space inside the element. */
+    padding: 22px 0;
+    /* This adds a shadow. */
+    box-shadow: none;
+    /* This sets the space between lines of text. */
+    line-height: 1.5;
+}
+/* These styles control faq button:hover. */
+.faq-button:hover {
+    /* This adds a shadow. */
+    box-shadow: none;
+    /* This sets the text colour. */
+    color: #8b3c0f;
+    /* This removes movement or scaling. */
+    transform: none;
+}
+/* These styles control faq button span. */
+.faq-button span {
+    /* This sets the text size. */
+    font-size: 1.4rem;
+    /* This makes style changes smooth. */
+    transition: transform .2s;
+}
+/* These styles control faq button[aria expanded="true"] span. */
+.faq-button[aria-expanded="true"] span {
+    /* This moves, rotates or scales the element. */
+    transform: rotate(45deg);
+}
+/* These styles control faq item > p. */
+.faq-item > p {
+    /* This sets the text colour. */
+    color: var(--muted);
+    /* This runs the named animation. */
+    animation: appear .25s;
+}
+/* These styles control site footer. */
+.site-footer {
+    /* This sets the background colour or gradient. */
+    background: #edf1f7;
+    /* This sets the border appearance. */
+    border-top: 1px solid #dce3ed;
+    /* This sets space inside the element. */
+    padding: 45px 0 20px;
+}
+/* These styles control footer grid. */
+.footer-grid {
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This sets the space between items. */
+    gap: 35px;
+}
+/* These styles control site footer h2. */
+.site-footer h2 {
+    /* This sets the text size. */
+    font-size: 1rem;
+    /* This changes the space between letters. */
+    letter-spacing: 0;
+}
+/* These styles control site footer p. */
+.site-footer p {
+    /* This sets the text size. */
+    font-size: 0.875rem;
+}
+/* These styles control site footer brand. */
+.site-footer .brand {
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 12px;
+}
+/* These styles control site footer nav. */
+.site-footer nav {
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This sets the number and widths of grid columns. */
+    grid-template-columns: 1fr 1fr;
+    /* This sets the space between items. */
+    gap: 8px 20px;
+    /* This sets the text size. */
+    font-size: 0.875rem;
+}
+/* These styles control subscribe row. */
+.subscribe-row {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    /* This aligns items across the row or grid. */
+    align-items: start;
+    /* This sets the space between items. */
+    gap: 10px;
+}
+/* These styles control subscribe row input. */
+.subscribe-row input {
+    min-width: 0;
+}
+/* These styles control subscribe row button. */
+.subscribe-row button {
+    /* This sets space inside the element. */
+    padding: 14px 12px;
+    /* This sets the text size. */
+    font-size: 0.85rem;
+}
+/* These styles control footer bottom. */
+.footer-bottom {
+    /* This arranges items with Flexbox. */
+    display: flex;
+    flex-wrap: wrap;
+    /* This sets the space between items. */
+    gap: 20px;
+    /* This puts space between the items. */
+    justify-content: space-between;
+    /* This sets the border appearance. */
+    border-top: 1px solid #ced8e5;
+    /* This sets space outside the top edge. */
+    margin-top: 35px;
+    /* This sets space inside the top edge. */
+    padding-top: 20px;
+    /* This sets the text colour. */
+    color: var(--muted);
+    /* This sets the text size. */
+    font-size: 0.8rem;
+}
+/* These styles control notice. */
+.notice {
+    /* This keeps the element in place while scrolling. */
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    /* This moves, rotates or scales the element. */
+    transform: translate(-50%, 20px);
+    /* This sets space inside the element. */
+    padding: 14px 22px;
+    /* This rounds the corners. */
+    border-radius: 12px;
+    /* This sets the background colour or gradient. */
+    background: var(--blue);
+    /* This sets the text colour. */
+    color: white;
+    /* This adds a shadow. */
+    box-shadow: 0 12px 30px #10243d35;
+    /* This controls which positioned element appears on top. */
+    z-index: 40;
+    width: max-content;
+    max-width: 90%;
+    /* This sets space outside the element. */
+    margin: 0;
+    /* This makes the element invisible. */
+    opacity: 0;
+    /* This controls whether the element receives mouse actions. */
+    pointer-events: none;
+    /* This makes style changes smooth. */
+    transition: opacity .25s, transform .25s;
+}
+/* These styles control noticevisible. */
+.notice.visible {
+    /* This makes the element fully visible. */
+    opacity: 1;
+    /* This moves, rotates or scales the element. */
+    transform: translate(-50%, 0);
+}
+dialog {
+    width: min(490px, 90%);
+    max-height: 90vh;
+    /* This sets space inside the element. */
+    padding: 32px;
+    /* This sets the border appearance. */
+    border: 1px solid white;
+    /* This rounds the corners. */
+    border-radius: 24px;
+    /* This sets the text colour. */
+    color: var(--ink);
+    /* This adds a shadow. */
+    box-shadow: 0 30px 70px #10243d40;
+}
+dialog[open] {
+    /* This runs the named animation. */
+    animation: appear .25s;
+}
+dialog::backdrop {
+    /* This sets the background colour or gradient. */
+    background: #10243d85;
+    /* This blurs the background behind the element. */
+    backdrop-filter: blur(5px);
+}
+dialog img {
+    height: 220px;
+    width: 100%;
+    /* This fits the image inside its space. */
+    object-fit: contain;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 20px;
+}
+/* These styles control close button. */
+.close-button {
+    /* This positions the element inside its positioned parent. */
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    /* This sets space inside the element. */
+    padding: 3px 12px;
+    /* This sets the text size. */
+    font-size: 1.6rem;
+    /* This sets the background colour or gradient. */
+    background: var(--blue);
+    /* This sets the text colour. */
+    color: white;
+    /* This adds a shadow. */
+    box-shadow: none;
+}
+/* 7. CSS owns the visual effects. JavaScript only changes classes or text. */
+/* This defines the appear animation. */
+@keyframes appear {
+    from {
+        /* This makes the element invisible. */
+        opacity: 0;
+        /* This moves, rotates or scales the element. */
+        transform: translateY(12px);
+    }
+    to {
+        /* This makes the element fully visible. */
+        opacity: 1;
+        /* This moves, rotates or scales the element. */
+        transform: translateY(0);
+    }
+}
+/* This defines the success-pop animation. */
+@keyframes success-pop {
+    from {
+        /* This moves, rotates or scales the element. */
+        transform: scale(.5);
+        /* This makes the element invisible. */
+        opacity: 0;
+    }
+    to {
+        /* This moves, rotates or scales the element. */
+        transform: scale(1);
+        /* This makes the element fully visible. */
+        opacity: 1;
+    }
+}
+/* These styles control js ready reveal. */
+.js-ready .reveal {
+    /* This makes the element invisible. */
+    opacity: 0;
+    /* This moves, rotates or scales the element. */
+    transform: translateY(20px);
+    /* This makes style changes smooth. */
+    transition: opacity .7s, transform .7s;
+}
+/* These styles control js ready revealshown. */
+.js-ready .reveal.shown {
+    /* This makes the element fully visible. */
+    opacity: 1;
+    /* This moves, rotates or scales the element. */
+    transform: translateY(0);
+}
+/* Mobile styles come first; wider screens add columns. */
+/* These styles apply from 650 pixels wide. */
+@media (min-width: 650px) {
+    h1 {
+        /* This sets the text size. */
+        font-size: 3.1rem;
+    }
+    /* These styles control product grid. */
+    .product-grid {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* These styles control filter panel. */
+    .filter-panel {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: 2fr 1fr;
+    }
+    /* These styles control intro strip. */
+    .intro-strip {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: repeat(4, 1fr);
+    }
+    /* These styles control daily product. */
+    .daily-product {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: 1fr 2fr;
+        /* This aligns items across the row or grid. */
+        align-items: center;
+    }
+    /* These styles control daily product > div. */
+    .daily-product > div {
+        /* This sets space inside the element. */
+        padding: 34px;
+    }
+    /* These styles control cart row. */
+    .cart-row {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: 95px 1fr auto;
+    }
+    /* These styles control cart row img. */
+    .cart-row img {
+        width: 95px;
+    }
+    /* These styles control row end. */
+    .row-end {
+        grid-column: auto;
+        /* This aligns the text right. */
+        text-align: right;
+    }
+    /* These styles control footer grid. */
+    .footer-grid {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: 1fr 1fr;
+    }
+    /* These styles control footer grid > form. */
+    .footer-grid > form {
+        grid-column: 1 / -1;
+        max-width: 430px;
+    }
+}
+/* These styles apply from 1000 pixels wide. */
+@media (min-width: 1000px) {
+    /* These styles control menu button. */
+    .menu-button {
+        /* This hides the element. */
+        display: none;
+    }
+    #navigation,
+    /* These styles control navigationopen. */
+    #navigation.open {
+        width: auto;
+        /* This sets space inside the element. */
+        padding: 0;
+        /* This arranges items with Flexbox. */
+        display: flex;
+        flex-direction: row;
+        /* This aligns items across the row or grid. */
+        align-items: center;
+        /* This sets the space between items. */
+        gap: 3px;
+    }
+    /* These styles control hero. */
+    .hero {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: 1.05fr 1fr;
+    }
+    /* These styles control hero copy. */
+    .hero-copy {
+        /* This sets space inside the element. */
+        padding: 60px 45px;
+    }
+    /* These styles control hero h1. */
+    .hero h1 {
+        /* This sets the text size. */
+        font-size: 3.3rem;
+    }
+    /* These styles control hero art img. */
+    .hero-art img {
+        height: 440px;
+    }
+    /* These styles control hero art. */
+    .hero-art {
+        /* This sets space inside the element. */
+        padding: 38px;
+    }
+    /* These styles control product grid. */
+    .product-grid {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* These styles control two column. */
+    .two-column {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: minmax(0, 1.75fr) minmax(300px, 1fr);
+    }
+    /* These styles control support layout. */
+    .support-layout {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: 1fr 1fr;
+        /* This sets the space between items. */
+        gap: 70px;
+    }
+    /* These styles control summary. */
+    .summary {
+        /* This keeps the element visible after its scroll position is reached. */
+        position: sticky;
+        top: 110px;
+    }
+    /* These styles control footer grid. */
+    .footer-grid {
+        /* This sets the number and widths of grid columns. */
+        grid-template-columns: 1.2fr .85fr 1.3fr;
+    }
+    /* These styles control footer grid > form. */
+    .footer-grid > form {
+        grid-column: auto;
+    }
+}
+/* These styles reduce movement when the user requests it. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        /* This uses normal scrolling without animation. */
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        /* This runs the named animation. */
+        animation: none !important;
+        /* This makes style changes smooth. */
+        transition: none !important;
+    }
+    /* These styles control js ready reveal. */
+    .js-ready .reveal {
+        /* This makes the element fully visible. */
+        opacity: 1;
+        /* This removes movement or scaling. */
+        transform: none;
+    }
+    .product-card:hover,
+    /* These styles control product card:hover img. */
+    .product-card:hover img {
+        /* This removes movement or scaling. */
+        transform: none;
+    }
+}
+/* The loading indicator is visible only while the first page assets load. */
+/* These styles control page loader. */
+.page-loader {
+    /* This hides the element. */
+    display: none;
+}
+/* These styles control js ready page loader. */
+.js-ready .page-loader {
+    /* This keeps the element in place while scrolling. */
+    position: fixed;
+    inset: 0;
+    /* This sets the background colour or gradient. */
+    background: #f6f8bfe6;
+    /* This controls which positioned element appears on top. */
+    z-index: 50;
+    /* This arranges items in a grid. */
+    display: grid;
+    /* This centres grid items in both directions. */
+    place-items: center;
+}
+/* These styles control spinner. */
+.spinner {
+    width: 42px;
+    height: 42px;
+    /* This sets the border appearance. */
+    border: 4px solid #cdd8e7;
+    /* This sets the border appearance. */
+    border-top-color: #a44416;
+    /* This rounds the corners. */
+    border-radius: 50%;
+    /* This runs the named animation. */
+    animation: spin .7s linear infinite;
+}
+/* This defines the spin animation. */
+@keyframes spin {
+    to {
+        /* This moves, rotates or scales the element. */
+        transform: rotate(360deg);
+    }
+}
+/* These styles control details table. */
+.details-table {
+    width: 100%;
+    /* This joins the table borders. */
+    border-collapse: collapse;
+    /* This sets space outside the element. */
+    margin: 20px 0;
+    /* This sets the text size. */
+    font-size: 0.9rem;
+}
+/* These styles control details table caption. */
+.details-table caption {
+    /* This aligns the text left. */
+    text-align: left;
+    /* This sets how bold the text is. */
+    font-weight: 700;
+    /* This sets space outside the bottom edge. */
+    margin-bottom: 8px;
+}
+.details-table th,
+/* These styles control details table td. */
+.details-table td {
+    /* This aligns the text left. */
+    text-align: left;
+    /* This sets space inside the element. */
+    padding: 10px;
+    /* This sets the border appearance. */
+    border: 1px solid #dce3ec;
+}
+/* These styles control details table th. */
+.details-table th {
+    /* This sets the background colour or gradient. */
+    background: #edf3fc;
+}
+/* Reserve card space until the small product script fills the grid. */
+/* These styles control products:empty. */
+#products:empty {
+    min-height: 3310px;
+}
+/* These styles apply from 650 pixels wide. */
+@media (min-width: 650px) {
+    /* These styles control products:empty. */
+    #products:empty {
+        min-height: 1640px;
+    }
+}
+/* These styles apply from 1000 pixels wide. */
+@media (min-width: 1000px) {
+    /* These styles control products:empty. */
+    #products:empty {
+        min-height: 1085px;
+    }
+}

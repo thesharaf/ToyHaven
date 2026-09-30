@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- This is the feedback and support page. The language is English. -->
+<html lang="en">
+<head>
+    <!-- This supports normal text and special characters. -->
+    <meta charset="UTF-8" />
+    <!-- This lets the layout fit phone and desktop screens. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- This describes the page for search engines. -->
+    <meta name="description" content="Feedback and support at Toy Haven. Discover figurines, toys, board games and diecast cars in our demo collection." />
+    <!-- This sets the browser theme colour where supported. -->
+    <meta name="theme-color" content="#132f59" />
+    <!-- This is the title shown in the browser tab. -->
+    <title>Feedback and support | Toy Haven</title>
+    <!-- This connects the browser tab icon. -->
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" />
+    <!-- This connects the Apple home screen icon. -->
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <!-- This connects the web app settings. -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <!-- This connects the CSS design file. -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- This loads data.js after the HTML has been read. -->
+    <script src="js/data.js" defer></script>
+    <!-- This loads common.js after the HTML has been read. -->
+    <script src="js/common.js" defer></script>
+    <!-- This loads support.js after the HTML has been read. -->
+    <script src="js/support.js" defer></script>
+</head>
+<body>
+    <!-- This link jumps to the main content. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    
+    <!-- This is the top header with the logo and navigation. -->
+    <header class="site-header">
+        <div class="nav-wrap">
+            <!-- This link opens the home page. -->
+            <a class="brand" href="index.html">
+                <span class="brand-mark">TH</span>Toy<span>Haven</span>
+            </a>
+
+            <!-- This is the mobile menu button. -->
+            <button
+                id="menu-button"
+                class="menu-button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="navigation"
+            >
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- These are the page navigation links. -->
+            <nav id="navigation" aria-label="Main navigation">
+                <!-- This link opens the home page. -->
+                <a href="index.html">Home</a>
+                <!-- This link opens the product listing page. -->
+                <a href="products.html">Products</a>
+                <!-- This link opens the cart page. -->
+                <a href="cart.html">Cart <!-- This shows the number of items in the cart. --><span id="cart-count">0</span></a>
+                <!-- This link opens the checkout page. -->
+                <a href="checkout.html">Checkout</a>
+                <!-- This link opens the wishlist page. -->
+                <a href="wishlist.html">Wishlist</a>
+                <!-- This link opens the feedback and support page. -->
+                <a href="support.html" aria-current="page">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- This is the loading screen. -->
+    <div id="page-loader" class="page-loader" role="status">
+        <span class="spinner" aria-hidden="true"></span>
+        <span class="sr-only">Loading Toy Haven</span>
+    </div>
+
+    <!-- This contains the main page content. -->
+    <main id="main" class="container">
+        <div class="page-heading reveal">
+            <p class="eyebrow">WE ARE HERE TO HELP</p>
+            <!-- This is the main page heading. -->
+            <h1>Let’s talk toys.</h1>
+            <p>Have a question or an idea? Leave your feedback below.</p>
+        </div>
+
+        <div class="two-column support-layout">
+            <section class="panel">
+                <h2>Send your feedback</h2>
+                <p class="muted">This will help us to improve our services.</p>
+
+                <!-- This is the feedback form. -->
+                <form id="feedback-form" novalidate>
+                    <!-- This label describes the field below. -->
+                    <label for="name">Name</label>
+                    <!-- This is the feedback name field. -->
+                    <input id="name" autocomplete="name" required minlength="2" maxlength="80" />
+
+                    <!-- This label describes the field below. -->
+                    <label for="feedback-email">Email address</label>
+                    <!-- This is the feedback email field. -->
+                    <input id="feedback-email" type="email" autocomplete="email" required maxlength="100" />
+
+                    <!-- This label describes the field below. -->
+                    <label for="message">Your message</label>
+                    <!-- This is the feedback message box. -->
+                    <textarea id="message" rows="5" required minlength="10" maxlength="1000"></textarea>
+
+                    <!-- This shows feedback errors or confirmation. -->
+                    <p id="feedback-message" class="form-message" role="status"></p>
+                    <!-- This button submits the form. -->
+                    <button type="submit">Save feedback &rarr;</button>
+                </form>
+            </section>
+
+            <!-- This section contains frequently asked questions. -->
+            <section class="faq">
+                <p class="eyebrow">GOOD TO KNOW</p>
+                <h2>Frequently asked questions</h2>
+
+                
+                <div class="faq-item">
+                    <h3>
+                        <!-- This opens or closes an FAQ answer. -->
+                        <button class="faq-button" aria-expanded="false" aria-controls="answer-1">
+                            Who is Sharaf?<span aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+                    <p id="answer-1" hidden>He is the owner. Also known as David Billa</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>
+                        <!-- This opens or closes an FAQ answer. -->
+                        <button class="faq-button" aria-expanded="false" aria-controls="answer-2">
+                            Will my cart be saved?<span aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+                    <p id="answer-2" hidden>
+                        Yes. Your cart stays in this browser until you clear it or complete a demo order. Clearing browser data also removes it.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>
+                        <!-- This opens or closes an FAQ answer. -->
+                        <button class="faq-button" aria-expanded="false" aria-controls="answer-3">
+                            How does my collection work?<span aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+                    <p id="answer-3" hidden>
+                        Add a product to your wishlist, then choose Interested, Owned or Not Interested. You can change this selection later.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>
+                        <!-- This opens or closes an FAQ answer. -->
+                        <button class="faq-button" aria-expanded="false" aria-controls="answer-4">
+                            How long is the delivery time?<span aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+                    <p id="answer-4" hidden>
+                        Delivery times vary depending on your location and the items in your order. Typically, delivery takes 3-5 business days.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
+    <!-- This is the footer shown at the bottom of the page. -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <!-- This link opens the home page. -->
+                <a class="brand" href="index.html">Toy<span>Haven</span></a>
+                <p>Small discoveries. Big imagination.</p>
+            </div>
+
+            <div>
+                <h2>Explore</h2>
+                <!-- These are the page navigation links. -->
+                <nav aria-label="Footer navigation">
+                    <!-- This link opens the home page. -->
+                    <a href="index.html">Home</a>
+                    <!-- This link opens the product listing page. -->
+                    <a href="products.html">Products</a>
+                    <!-- This link opens the cart page. -->
+                    <a href="cart.html">Cart</a>
+                    <!-- This link opens the checkout page. -->
+                    <a href="checkout.html">Checkout</a>
+                    <!-- This link opens the wishlist page. -->
+                    <a href="wishlist.html">Wishlist</a>
+                    <!-- This link opens the feedback and support page. -->
+                    <a href="support.html">Support</a>
+                </nav>
+            </div>
+
+            <!-- This is the newsletter subscription form. -->
+            <form id="newsletter-form" novalidate>
+                <!-- This label describes the field below. -->
+                <label for="newsletter-email">Email address</label>
+                <div class="subscribe-row">
+                    <!-- This is the newsletter email box. -->
+                    <input id="newsletter-email" type="email" required placeholder="you@example.com" maxlength="100" />
+                    <!-- This button submits the form. -->
+                    <button type="submit">Subscribe</button>
+                </div>
+                <!-- This shows the subscription message. -->
+                <p id="newsletter-message" class="form-message" role="status"></p>
+            </form>
+        </div>
+
+        <div class="container footer-bottom">
+            Toy Haven &copy; 2026 <!-- This link jumps to the main content. --><a href="#main">Back to top &uarr;</a>
+        </div>
+    </footer>
+
+    <!-- This shows short messages such as Added to cart. -->
+    <p id="notice" class="notice" role="status"></p>
+
+   
+    <!-- This is the product details popup. -->
+    <dialog id="product-dialog" aria-labelledby="detail-name">
+        <!-- This button closes the product popup. -->
+        <button id="close-dialog" class="close-button" aria-label="Close product details">&times;</button>
+        <!-- JavaScript places product details here. -->
+        <div id="product-details"></div>
+    </dialog>
+</body>
+</html>
